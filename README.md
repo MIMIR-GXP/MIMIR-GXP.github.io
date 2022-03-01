@@ -1,1 +1,0 @@
-# MIMIR-GXP.github.io
