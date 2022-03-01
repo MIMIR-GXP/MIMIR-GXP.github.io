@@ -1,1 +1,1 @@
-# MIMIR-X.github.io
+# MIMIR-GXP.github.io
