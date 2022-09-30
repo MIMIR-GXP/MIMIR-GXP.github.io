@@ -36,7 +36,7 @@ html {
 
 .bg {
     height: auto;
-    background-image: url('/public/bg.jpg');
+    background-image: url('https://mimir-gxp.github.io/public/bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
