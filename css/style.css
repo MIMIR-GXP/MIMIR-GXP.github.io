@@ -16,15 +16,6 @@
     font-family: 'Poppins', sans-serif;
 }
 
-#main > section.top-page > header > nav > li:nth-child(1) > a {
-    background-color: rgb(154, 102, 238);
-    padding: 5px 20px;
-    border-radius: 35px;
-}
-#main > section.top-page > header > nav > li:nth-child(1) > a:hover {
-    color: #0c111c;
-}
-
 /* Main Content */
 
 body,
@@ -96,7 +87,8 @@ section.top-page {
 
 section.top-page.active {
     background-color: transparent;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
+
 }
 
 header {
@@ -122,12 +114,24 @@ header h1 {
 /* nav bar */
 
 nav.nav {
+    margin-left: auto;
+    padding-right: 90px;
+}
+
+.nav-content {
     display: flex;
     justify-content: space-between;
     list-style: none;
-    margin-left: auto;
-    padding-right: 90px;
     width: 450px;
+}
+
+#main > section.top-page > header > nav > div > li:nth-child(1) > a {
+    background-color: rgb(154, 102, 238);
+    padding: 5px 20px;
+    border-radius: 35px;
+}
+#main > section.top-page > header > nav > div > li:nth-child(1) > a:hover {
+    color: var(--background);
 }
 
 nav.nav li a {
@@ -266,6 +270,11 @@ form button:hover {
     margin: auto;
     padding-top: 30px;
     padding-bottom: 120px;
+    transition: all 0.3s ease;
+}
+
+.pweb:hover {
+    transform: translateY(-10px);
 }
 
 .pweb .preview {
@@ -308,6 +317,10 @@ form button:hover {
     width: 30%;
     margin-top: 30px;
     padding: 10px;
+    transition: all 0.3s ease;
+}
+.pdesign:hover {
+    transform: translateY(-10px);
 }
 
 .pdesign .preview {
@@ -370,8 +383,11 @@ label,
     display: none;
 }
 
-@media all and (max-width: 991px) {
+.top-page label:after {
+    display: none;
+}
 
+@media all and (max-width: 991px) {
 
     nav.nav {
         display: none;
@@ -389,38 +405,62 @@ label,
         color: white;
         cursor: pointer;
         z-index: 1;
+        font-weight: 600;
+    }
+
+    .open.active {
+        display: none !important;
+    }
+
+    .close.active {
+        display: none !important;
+    }
+
+    .nav-content {
+        display: block;
+        flex-direction: column;
+        margin: auto;
+        justify-content: space-between;
+        width: 350px;
+        padding-top: 40%;
     }
 
     nav.nav {
         display: none;
         flex-direction: column;
         background: var(--background-low);
-        backdrop-filter: blur(50px);
-        height: 100%;
+        backdrop-filter: blur(50px) brightness(70%);
+        height: 150vh;
         padding-top: 220px;
         padding-bottom: 150px;
         width: 100%;
         position: absolute;
         box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
         text-align: center;
-
     }
 
     nav.nav li {
         padding: 20px;
         height: 20px;
         transition: all 0.3s ease;
+        padding: 40px;
     }
 
     nav.nav li:hover {
-        transform: scale(1.2);
+        transform: scale(1.1);
+    }
 
+    nav.nav li a {
+        font-size: 30px;
+    }
+
+    nav.nav li a:hover {
+        color: rgb(177, 136, 241) !important;
     }
 
     #toggle:checked+.nav {
         display: flex;
     }
-
 
     form {
         width: 85%;
@@ -437,14 +477,19 @@ label,
         width: 90%;
     }
 
-    #main > section.top-page > header > nav > li:nth-child(1) > a {
+    #main > section.top-page > header > nav > div > li:nth-child(1) > a {
         background-color: transparent
-    }
-    #main > section.top-page > header > nav > li:nth-child(1) > a:hover {
-        color: rgb(154, 102, 238);
     }
 
     h1 {
         font-size: 25px !important;
+    }
+
+}
+
+@media all and (max-width: 600px) {
+
+    .nav-content {
+        padding-top: 85%;
     }
 }
